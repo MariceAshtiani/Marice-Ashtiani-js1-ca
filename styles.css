@@ -1,6 +1,5 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
 }
 
 h1 {
@@ -51,12 +50,25 @@ nav a {
     text-align: center;
 }
 
+.single-result {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 500px;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.single-result h2, p, img {
+    margin-bottom: 40px;
+}
+
 .result a {
     text-decoration: none;
     color: black;
 }
 
-.result h2 {
+h2 {
     text-decoration: underline;
     text-transform: uppercase;
     margin-bottom: 50px;
@@ -73,22 +85,27 @@ form {
     border-radius: 1rem;
 }
 
+label {
+    font-weight: bolder;
+}
+
 input {
     width: 100%;
     margin-top: 5px;
     padding: 10px;
     font-size: 16px;
+    border-radius: 5px;
 }
 
 button {
-    background: darkgrey;
+    background: rgb(38, 36, 36);
     border: none;
     width: 300px;
     padding: 1rem;
     color: white;
     margin-top: 10px;
     cursor: pointer;
-    border-radius: 0.2rem;
+    border-radius: 10px;
 }
 
 label {
@@ -97,10 +114,10 @@ label {
 }
 
 .form-error {
-/* display: none;*/
-color: red;
-font-size: 1rem;
-margin-top: 2px;
+    display: none;
+    color: red;
+    font-size: 1rem;
+    margin-top: 2px;
 }
 
 .loading {

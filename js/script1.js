@@ -4,11 +4,13 @@ const resultsContainer = document.querySelector(".results");
 
 async function getBeers() {
 
-    const response = await fetch(url);
+    try {
+        
+        const response = await fetch(url);
 
-    const results = await response.json();
+        const results = await response.json();
 
-    resultsContainer.innerHTML = "";
+        resultsContainer.innerHTML = "";
 
     for(let i = 0; i < results.length; i++) {
         console.log(results[i]);
@@ -20,8 +22,12 @@ async function getBeers() {
                                         <p>${results[i].tagline}</p>
                                         <p>${results[i].first_brewed}</p>
                                         </div>`;
+        }
     }
-
+    catch(error) {
+        console.log(error);
+        resultsContainer.innerHTML = message("error", error);
+    }
 }
 
 getBeers();

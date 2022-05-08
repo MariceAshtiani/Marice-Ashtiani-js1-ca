@@ -13,6 +13,8 @@ const adress = document.querySelector("#adress");
 const adressError = document.querySelector("#adressError");
 
 
+
+
 function validateForm() {
     event.preventDefault();
 
@@ -27,6 +29,12 @@ function validateForm() {
     } else {
         subjectError.style.display = "block";
     }
+
+    if (validateEmail(email.value) === true) {
+        emailError.style.display = "none";
+    } else {
+        emailError.style.display = "block";
+    }
     
     if (checkLength(adress.value, 24) === true) {
         adressError.style.display = "none";
@@ -34,11 +42,11 @@ function validateForm() {
         adressError.style.display = "block";
     }
     
-  
-    console.log("hello");
 }
 
+
 form.addEventListener("submit", validateForm)
+
 
 
 function checkLength(value, len) {
@@ -51,8 +59,10 @@ function checkLength(value, len) {
 }
 
 
+
 function validateEmail(email) {
     const regEx = /\S+@\S+\.\S+/;
     const patternMatches = regEx.test(email);
     return patternMatches;
 }
+
